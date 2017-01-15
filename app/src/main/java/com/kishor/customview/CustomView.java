@@ -15,24 +15,25 @@ public class CustomView extends View {
 
     boolean mShowText;
     Integer mTextPost;
-    public CustomView(Context context, AttributeSet attributeSet){
-        super(context,attributeSet);
-        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.CustomView,0,0);
-        try {
-            mShowText = typedArray.getBoolean(R.styleable.CustomView_showText,false);
-            mTextPost = typedArray.getInteger(R.styleable.CustomView_labelPosition,0);
 
-        }finally {
+    public CustomView(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.CustomView, 0, 0);
+        try {
+            mShowText = typedArray.getBoolean(R.styleable.CustomView_showText, false);
+            mTextPost = typedArray.getInteger(R.styleable.CustomView_labelPosition, 0);
+
+        } finally {
             typedArray.recycle();
         }
     }
 
-    public boolean isShowText(){
+    public boolean isShowText() {
 
-return  mShowText;
+        return mShowText;
     }
 
-    public void setShowText(boolean showText){
+    public void setShowText(boolean showText) {
         mShowText = showText;
         invalidate();
         requestLayout();
